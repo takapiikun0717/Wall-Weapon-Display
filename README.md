@@ -7,6 +7,7 @@ There’s only one type of Vanilla weapon display, and as it’s the kind you pl
 I’ve added three new types of wall-mounted weapon displays—two large and one small of each type.
 * Panels
 * Pegboards (gray, black)
+
 You can purchase each display from the Gunsmith.
 Generalists can purchase various types of smaller displays.
 ## Requirements
