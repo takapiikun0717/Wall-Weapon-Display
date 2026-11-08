@@ -1,0 +1,9 @@
+[mod]
+name="Wall Weapon Display"
+id="wall_weapon_display"
+version="1.7.2"
+
+[autoload]
+WallWeaponDisplay="res://WallWeaponDisplay/Main.gd"
+
+[registry]

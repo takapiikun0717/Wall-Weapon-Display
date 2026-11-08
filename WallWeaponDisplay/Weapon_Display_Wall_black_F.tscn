@@ -1,0 +1,93 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://dn8h8ut7uigli" path="res://Scripts/Surface.gd" id="3"]
+[ext_resource type="Script" uid="uid://c24jrs5viyjjd" path="res://Scripts/Furniture.gd" id="4"]
+[ext_resource type="Resource" path="res://WallWeaponDisplay/Weapon_Display_Wall_black_F.tres" id="5"]
+[ext_resource type="Texture2D" uid="uid://5cjlpiemxuyq" path="res://UI/Sprites/Icon_Object.png" id="6"]
+[ext_resource type="Material" uid="uid://c013f02y6be6o" path="res://Modular/Materials/MT_Hint.tres" id="7"]
+[ext_resource type="Script" path="res://WallWeaponDisplay/WallDisplayMesh_black.gd" id="8"]
+
+[sub_resource type="ConcavePolygonShape3D" id="Shape_Body"]
+data = PackedVector3Array(0.94, -0.79, 0.04, -0.94, -0.79, 0.04, 0.94, 0.75, 0.04, 0.94, 0.75, 0.04, -0.94, -0.79, 0.04, -0.94, 0.75, 0.04, -0.94, -0.79, 0.02, 0.94, -0.79, 0.02, -0.94, 0.75, 0.02, -0.94, 0.75, 0.02, 0.94, -0.79, 0.02, 0.94, 0.75, 0.02, -1, 0.85, 0.06, -1, 0.75, 0.06, -1, 0.85, 0, -1, 0.85, 0, -1, 0.75, 0.06, -1, 0.75, 0, -1, 0.75, 0.06, -1, -0.79, 0.06, -1, 0.75, 0, -1, 0.75, 0, -1, -0.79, 0.06, -1, -0.79, 0, -1, -0.79, 0.06, -1, -0.85, 0.06, -1, -0.79, 0, -1, -0.79, 0, -1, -0.85, 0.06, -1, -0.85, 0, -1, 0.85, 0, -1, 0.75, 0, -0.94, 0.85, 0, -0.94, 0.85, 0, -1, 0.75, 0, -0.94, 0.75, 0, -1, 0.75, 0, -1, -0.79, 0, -0.94, 0.75, 0, 0.94, 0.75, 0, -0.94, 0.85, 0, -0.94, 0.75, 0, 0.94, 0.85, 0, -0.94, 0.85, 0, 0.94, 0.75, 0, 0.94, 0.75, 0, 1, 0.85, 0, 0.94, 0.85, 0, 1, 0.75, 0, 1, 0.85, 0, 0.94, 0.75, 0, 0.94, 0.75, 0, 0.94, -0.79, 0, 1, 0.75, 0, -0.94, 0.75, 0, -1, -0.79, 0, -0.94, -0.79, 0, 1, 0.75, 0, 0.94, -0.79, 0, 1, -0.79, 0, -1, -0.79, 0, -1, -0.85, 0, -0.94, -0.79, 0, -0.94, -0.79, 0, -1, -0.85, 0, -0.94, -0.85, 0, -0.94, -0.85, 0, 0.94, -0.85, 0, -0.94, -0.79, 0, -0.94, -0.79, 0, 0.94, -0.85, 0, 0.94, -0.79, 0, 0.94, -0.79, 0, 0.94, -0.85, 0, 1, -0.79, 0, 1, -0.79, 0, 0.94, -0.85, 0, 1, -0.85, 0, -0.94, 0.85, 0.06, -0.94, 0.75, 0.06, -1, 0.85, 0.06, -1, 0.85, 0.06, -0.94, 0.75, 0.06, -1, 0.75, 0.06, 0.94, 0.85, 0.06, -0.94, 0.75, 0.06, -0.94, 0.85, 0.06, -0.94, 0.75, 0.06, -0.94, -0.79, 0.06, -1, 0.75, 0.06, 0.94, 0.75, 0.06, -0.94, 0.75, 0.06, 0.94, 0.85, 0.06, -1, 0.75, 0.06, -0.94, -0.79, 0.06, -1, -0.79, 0.06, 0.94, 0.85, 0.06, 1, 0.75, 0.06, 0.94, 0.75, 0.06, 1, 0.85, 0.06, 1, 0.75, 0.06, 0.94, 0.85, 0.06, 1, 0.75, 0.06, 1, -0.79, 0.06, 0.94, 0.75, 0.06, 0.94, 0.75, 0.06, 1, -0.79, 0.06, 0.94, -0.79, 0.06, 1, -0.79, 0.06, 1, -0.85, 0.06, 0.94, -0.79, 0.06, -0.94, -0.79, 0.06, -0.94, -0.85, 0.06, -1, -0.79, 0.06, -0.94, -0.79, 0.06, 0.94, -0.79, 0.06, -0.94, -0.85, 0.06, -1, -0.79, 0.06, -0.94, -0.85, 0.06, -1, -0.85, 0.06, -0.94, -0.85, 0.06, 0.94, -0.79, 0.06, 0.94, -0.85, 0.06, 0.94, -0.79, 0.06, 1, -0.85, 0.06, 0.94, -0.85, 0.06, -1, 0.85, 0, -0.94, 0.85, 0, -1, 0.85, 0.06, -1, 0.85, 0.06, -0.94, 0.85, 0, -0.94, 0.85, 0.06, 0.94, 0.85, 0, -0.94, 0.85, 0.06, -0.94, 0.85, 0, 0.94, 0.85, 0.06, -0.94, 0.85, 0.06, 0.94, 0.85, 0, 0.94, 0.85, 0, 1, 0.85, 0, 0.94, 0.85, 0.06, 0.94, 0.85, 0.06, 1, 0.85, 0, 1, 0.85, 0.06, 1, 0.85, 0, 1, 0.75, 0, 1, 0.85, 0.06, 1, 0.85, 0.06, 1, 0.75, 0, 1, 0.75, 0.06, 1, 0.75, 0, 1, -0.79, 0, 1, 0.75, 0.06, 1, 0.75, 0.06, 1, -0.79, 0, 1, -0.79, 0.06, 1, -0.79, 0, 1, -0.85, 0, 1, -0.79, 0.06, 1, -0.79, 0.06, 1, -0.85, 0, 1, -0.85, 0.06, -0.94, 0.75, 0, -0.94, -0.79, 0, -0.94, 0.75, 0.06, -0.94, 0.75, 0.06, -0.94, -0.79, 0, -0.94, -0.79, 0.06, 0.94, 0.75, 0.06, 0.94, -0.79, 0.06, 0.94, 0.75, 0, 0.94, 0.75, 0, 0.94, -0.79, 0.06, 0.94, -0.79, 0, 0.94, 0.75, 0, -0.94, 0.75, 0, 0.94, 0.75, 0.06, 0.94, 0.75, 0.06, -0.94, 0.75, 0, -0.94, 0.75, 0.06, -0.94, -0.79, 0, 0.94, -0.79, 0, -0.94, -0.79, 0.06, -0.94, -0.79, 0.06, 0.94, -0.79, 0, 0.94, -0.79, 0.06, -0.94, -0.85, 0.06, 0.94, -0.85, 0.06, -0.94, -0.85, 0, -0.94, -0.85, 0, 0.94, -0.85, 0.06, 0.94, -0.85, 0, -1, -0.85, 0, -0.94, -0.85, 0.06, -0.94, -0.85, 0, -1, -0.85, 0, -1, -0.85, 0.06, -0.94, -0.85, 0.06, 0.94, -0.85, 0, 1, -0.85, 0.06, 1, -0.85, 0, 0.94, -0.85, 0, 0.94, -0.85, 0.06, 1, -0.85, 0.06)
+
+[sub_resource type="ConvexPolygonShape3D" id="Shape_Area"]
+points = PackedVector3Array(-0.975, -0.825, -0.01, -0.975, -0.825, 0.01, -0.975, 0.825, -0.01, -0.975, 0.825, 0.01, 0.975, -0.825, -0.01, 0.975, -0.825, 0.01, 0.975, 0.825, -0.01, 0.975, 0.825, 0.01)
+
+[sub_resource type="ConvexPolygonShape3D" id="Shape_Parenter"]
+points = PackedVector3Array(-1.025, -0.875, -0.055, -1.025, -0.875, 0.055, -1.025, 0.875, -0.055, -1.025, 0.875, 0.055, 1.025, -0.875, -0.055, 1.025, -0.875, 0.055, 1.025, 0.875, -0.055, 1.025, 0.875, 0.055)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_Hint"]
+material = ExtResource("7")
+size = Vector2(2, 1.7)
+
+[node name="Weapon_Display_Wall_black_F" type="Node3D"]
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0.04)
+script = ExtResource("8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Mesh" groups=["Display", "Furniture"]]
+script = ExtResource("3")
+surface = "Metal"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mesh/StaticBody3D"]
+shape = SubResource("Shape_Body")
+
+[node name="Furniture" type="Node3D" parent="." node_paths=PackedStringArray("mesh", "colliderR")]
+script = ExtResource("4")
+itemData = ExtResource("5")
+mesh = NodePath("../Mesh")
+colliderR = NodePath("../Mesh")
+wallElement = true
+
+[node name="Indicator" type="Sprite3D" parent="Furniture"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.03)
+modulate = Color(0, 1, 0, 0.25098)
+pixel_size = 0.0005
+billboard = 1
+double_sided = false
+no_depth_test = true
+render_priority = 1
+texture = ExtResource("6")
+
+[node name="Area" type="Area3D" parent="Furniture"]
+collision_mask = 8255
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Furniture/Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.065)
+shape = SubResource("Shape_Area")
+
+[node name="Parenter" type="Area3D" parent="Furniture"]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Furniture/Parenter"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.03)
+shape = SubResource("Shape_Parenter")
+
+[node name="Rays" type="Node3D" parent="Furniture"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015)
+
+[node name="Ray_01" type="RayCast3D" parent="Furniture/Rays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.01)
+target_position = Vector3(0, 0, -0.2)
+
+[node name="Ray_02" type="RayCast3D" parent="Furniture/Rays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.975, 0.825, -0.01)
+target_position = Vector3(0, 0, -0.2)
+
+[node name="Ray_03" type="RayCast3D" parent="Furniture/Rays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.975, 0.825, -0.01)
+target_position = Vector3(0, 0, -0.2)
+
+[node name="Ray_04" type="RayCast3D" parent="Furniture/Rays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.975, -0.825, -0.01)
+target_position = Vector3(0, 0, -0.2)
+
+[node name="Ray_05" type="RayCast3D" parent="Furniture/Rays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.975, -0.825, -0.01)
+target_position = Vector3(0, 0, -0.2)
+
+[node name="Hint" type="MeshInstance3D" parent="Furniture"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+mesh = SubResource("PlaneMesh_Hint")
