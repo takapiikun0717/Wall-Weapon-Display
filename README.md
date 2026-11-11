@@ -14,7 +14,7 @@ Generalists can purchase various types of smaller displays.
 Key Hook added in version 1.10.0
 Available for purchase from Generalist
 
-Key Hooks (Wooden, Metal)
+* Key Hooks (Wooden, Metal)
 
 ## Requirements
 Metro Mod Loader  ver3.4.2 or later
