@@ -1,0 +1,11 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" uid="uid://bigofhlj5i476" path="res://UI/Effects/MT_Item.tres" id="1"]
+[ext_resource type="Script" path="res://WallWeaponDisplay/IconSprite.gd" id="2"]
+
+[node name="Key_Hook" type="Sprite2D"]
+material = ExtResource("1")
+position = Vector2(64, 32)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("2")
+icon_path = "res://WallWeaponDisplay/Icon_Key_Hook.png"
