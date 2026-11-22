@@ -1,0 +1,107 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://dn8h8ut7uigli" path="res://Scripts/Surface.gd" id="3"]
+[ext_resource type="Script" uid="uid://c24jrs5viyjjd" path="res://Scripts/Furniture.gd" id="4"]
+[ext_resource type="Resource" path="res://WallWeaponDisplay/Key_Hook_Desk_F.tres" id="5"]
+[ext_resource type="Texture2D" uid="uid://5cjlpiemxuyq" path="res://UI/Sprites/Icon_Object.png" id="6"]
+[ext_resource type="Material" uid="uid://c013f02y6be6o" path="res://Modular/Materials/MT_Hint.tres" id="7"]
+[ext_resource type="Script" path="res://WallWeaponDisplay/TakujoKeyHookMesh.gd" id="8"]
+
+[sub_resource type="BoxShape3D" id="Box_Base"]
+size = Vector3(0.32, 0.024, 0.16)
+
+[sub_resource type="BoxShape3D" id="Box_Board"]
+size = Vector3(0.024, 0.2, 0.16)
+
+[sub_resource type="BoxShape3D" id="Box_Rail"]
+size = Vector3(0.28, 0.04, 0.04)
+
+[sub_resource type="ConvexPolygonShape3D" id="Shape_Area"]
+points = PackedVector3Array(-0.13, 0.04, -0.005, -0.13, 0.04, 0.005, -0.13, 0.2, -0.005, -0.13, 0.2, 0.005, 0.13, 0.04, -0.005, 0.13, 0.04, 0.005, 0.13, 0.2, -0.005, 0.13, 0.2, 0.005)
+
+[sub_resource type="ConvexPolygonShape3D" id="Shape_Parenter"]
+points = PackedVector3Array(-0.18, -0.02, -0.1, -0.18, -0.02, 0.1, -0.18, 0.3, -0.1, -0.18, 0.3, 0.1, 0.18, -0.02, -0.1, 0.18, -0.02, 0.1, 0.18, 0.3, -0.1, 0.18, 0.3, 0.1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_Hint"]
+material = ExtResource("7")
+size = Vector2(0.34, 0.18)
+
+[node name="Key_Hook_Desk_F" type="Node3D" groups=["KeyHook", "KeyHookDesk"]]
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+visibility_range_end = 30.0
+script = ExtResource("8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Mesh" groups=["Furniture"]]
+script = ExtResource("3")
+surface = "Wood"
+
+[node name="Col_Base" type="CollisionShape3D" parent="Mesh/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.012, 0)
+shape = SubResource("Box_Base")
+
+[node name="Col_Board" type="CollisionShape3D" parent="Mesh/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.148, 0.124, 0)
+shape = SubResource("Box_Board")
+
+[node name="Col_Rail" type="CollisionShape3D" parent="Mesh/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0024, 0.192, -0.034)
+shape = SubResource("Box_Rail")
+
+[node name="Furniture" type="Node3D" parent="." node_paths=PackedStringArray("mesh", "colliderR")]
+script = ExtResource("4")
+itemData = ExtResource("5")
+mesh = NodePath("../Mesh")
+colliderR = NodePath("../Mesh")
+
+[node name="Indicator" type="Sprite3D" parent="Furniture"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+modulate = Color(0, 1, 0, 0.25098)
+pixel_size = 0.0005
+billboard = 1
+double_sided = false
+no_depth_test = true
+render_priority = 1
+texture = ExtResource("6")
+
+[node name="Area" type="Area3D" parent="Furniture"]
+collision_mask = 8255
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Furniture/Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.03)
+shape = SubResource("Shape_Area")
+
+[node name="Parenter" type="Area3D" parent="Furniture"]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Furniture/Parenter"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("Shape_Parenter")
+
+[node name="Rays" type="Node3D" parent="Furniture"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.025, 0)
+
+[node name="Ray_01" type="RayCast3D" parent="Furniture/Rays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+target_position = Vector3(0, -0.2, 0)
+
+[node name="Ray_02" type="RayCast3D" parent="Furniture/Rays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, -0.07)
+target_position = Vector3(0, -0.2, 0)
+
+[node name="Ray_03" type="RayCast3D" parent="Furniture/Rays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, -0.07)
+target_position = Vector3(0, -0.2, 0)
+
+[node name="Ray_04" type="RayCast3D" parent="Furniture/Rays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 0.07)
+target_position = Vector3(0, -0.2, 0)
+
+[node name="Ray_05" type="RayCast3D" parent="Furniture/Rays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, 0.07)
+target_position = Vector3(0, -0.2, 0)
+
+[node name="Hint" type="MeshInstance3D" parent="Furniture"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
+mesh = SubResource("PlaneMesh_Hint")

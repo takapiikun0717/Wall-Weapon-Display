@@ -1,0 +1,12 @@
+[mod]
+name="Wall Gear"
+id="wall_weapon_display"
+version="1.17.0"
+
+[autoload]
+WallWeaponDisplay="res://WallWeaponDisplay/Main.gd"
+
+[registry]
+
+[updates]
+source="vostokmods:01a1babe-5398-745d-a6f0-046c50d62c6c"

@@ -1,0 +1,165 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://dn8h8ut7uigli" path="res://Scripts/Surface.gd" id="3"]
+[ext_resource type="Script" uid="uid://c24jrs5viyjjd" path="res://Scripts/Furniture.gd" id="4"]
+[ext_resource type="Resource" path="res://WallWeaponDisplay/Key_Hook_Black_F.tres" id="5"]
+[ext_resource type="Texture2D" uid="uid://5cjlpiemxuyq" path="res://UI/Sprites/Icon_Object.png" id="6"]
+[ext_resource type="Material" uid="uid://c013f02y6be6o" path="res://Modular/Materials/MT_Hint.tres" id="7"]
+[ext_resource type="Script" path="res://WallWeaponDisplay/KeyHookBlackMesh.gd" id="8"]
+
+[sub_resource type="BoxShape3D" id="Box_Back"]
+size = Vector3(0.6, 0.18, 0.01)
+
+[sub_resource type="BoxShape3D" id="Box_Floor"]
+size = Vector3(0.59, 0.015, 0.1)
+
+[sub_resource type="BoxShape3D" id="Box_Front"]
+size = Vector3(0.6, 0.045, 0.01)
+
+[sub_resource type="BoxShape3D" id="Box_SideL"]
+size = Vector3(0.01, 0.045, 0.1)
+
+[sub_resource type="BoxShape3D" id="Box_SideR"]
+size = Vector3(0.01, 0.045, 0.1)
+
+[sub_resource type="BoxShape3D" id="Box_Hook0"]
+size = Vector3(0.02, 0.02, 0.08)
+
+[sub_resource type="BoxShape3D" id="Box_Hook1"]
+size = Vector3(0.02, 0.02, 0.08)
+
+[sub_resource type="BoxShape3D" id="Box_Hook2"]
+size = Vector3(0.02, 0.02, 0.08)
+
+[sub_resource type="BoxShape3D" id="Box_Hook3"]
+size = Vector3(0.02, 0.02, 0.08)
+
+[sub_resource type="BoxShape3D" id="Box_Hook4"]
+size = Vector3(0.02, 0.02, 0.08)
+
+[sub_resource type="BoxShape3D" id="Box_Hook5"]
+size = Vector3(0.02, 0.02, 0.08)
+
+[sub_resource type="ConvexPolygonShape3D" id="Shape_Area"]
+points = PackedVector3Array(-0.31, -0.095, -0.01, -0.31, -0.095, 0.01, -0.31, 0.095, -0.01, -0.31, 0.095, 0.01, 0.31, -0.095, -0.01, 0.31, -0.095, 0.01, 0.31, 0.095, -0.01, 0.31, 0.095, 0.01)
+
+[sub_resource type="ConvexPolygonShape3D" id="Shape_Parenter"]
+points = PackedVector3Array(-0.33, -0.25, -0.05, -0.33, -0.25, 0.22, -0.33, 0.15, -0.05, -0.33, 0.15, 0.22, 0.33, -0.25, -0.05, 0.33, -0.25, 0.22, 0.33, 0.15, -0.05, 0.33, 0.15, 0.22)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_Hint"]
+material = ExtResource("7")
+size = Vector2(0.62, 0.2)
+
+[node name="Key_Hook_Black_F" type="Node3D" groups=["KeyHook", "KeyHook6"]]
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+visibility_range_end = 25.0
+script = ExtResource("8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Mesh" groups=["Furniture"]]
+script = ExtResource("3")
+surface = "Metal"
+
+[node name="Col_Back" type="CollisionShape3D" parent="Mesh/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.005)
+shape = SubResource("Box_Back")
+
+[node name="Col_Floor" type="CollisionShape3D" parent="Mesh/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.045, 0.055)
+shape = SubResource("Box_Floor")
+
+[node name="Col_Front" type="CollisionShape3D" parent="Mesh/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0675, 0.1075)
+shape = SubResource("Box_Front")
+
+[node name="Col_SideL" type="CollisionShape3D" parent="Mesh/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2975, 0.0675, 0.055)
+shape = SubResource("Box_SideL")
+
+[node name="Col_SideR" type="CollisionShape3D" parent="Mesh/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2975, 0.0675, 0.055)
+shape = SubResource("Box_SideR")
+
+[node name="Col_Hook0" type="CollisionShape3D" parent="Mesh/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, -0.0339, 0.0435)
+shape = SubResource("Box_Hook0")
+
+[node name="Col_Hook1" type="CollisionShape3D" parent="Mesh/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, -0.0339, 0.0435)
+shape = SubResource("Box_Hook1")
+
+[node name="Col_Hook2" type="CollisionShape3D" parent="Mesh/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, -0.0339, 0.0435)
+shape = SubResource("Box_Hook2")
+
+[node name="Col_Hook3" type="CollisionShape3D" parent="Mesh/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, -0.0339, 0.0435)
+shape = SubResource("Box_Hook3")
+
+[node name="Col_Hook4" type="CollisionShape3D" parent="Mesh/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, -0.0339, 0.0435)
+shape = SubResource("Box_Hook4")
+
+[node name="Col_Hook5" type="CollisionShape3D" parent="Mesh/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, -0.0339, 0.0435)
+shape = SubResource("Box_Hook5")
+
+[node name="Furniture" type="Node3D" parent="." node_paths=PackedStringArray("mesh", "colliderR")]
+script = ExtResource("4")
+itemData = ExtResource("5")
+mesh = NodePath("../Mesh")
+colliderR = NodePath("../Mesh")
+wallElement = true
+
+[node name="Indicator" type="Sprite3D" parent="Furniture"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.03)
+modulate = Color(0, 1, 0, 0.25098)
+pixel_size = 0.0005
+billboard = 1
+double_sided = false
+no_depth_test = true
+render_priority = 1
+texture = ExtResource("6")
+
+[node name="Area" type="Area3D" parent="Furniture"]
+collision_mask = 8255
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Furniture/Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.13)
+shape = SubResource("Shape_Area")
+
+[node name="Parenter" type="Area3D" parent="Furniture"]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Furniture/Parenter"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.03)
+shape = SubResource("Shape_Parenter")
+
+[node name="Rays" type="Node3D" parent="Furniture"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015)
+
+[node name="Ray_01" type="RayCast3D" parent="Furniture/Rays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.01)
+target_position = Vector3(0, 0, -0.2)
+
+[node name="Ray_02" type="RayCast3D" parent="Furniture/Rays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31, 0.095, -0.01)
+target_position = Vector3(0, 0, -0.2)
+
+[node name="Ray_03" type="RayCast3D" parent="Furniture/Rays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31, 0.095, -0.01)
+target_position = Vector3(0, 0, -0.2)
+
+[node name="Ray_04" type="RayCast3D" parent="Furniture/Rays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31, -0.095, -0.01)
+target_position = Vector3(0, 0, -0.2)
+
+[node name="Ray_05" type="RayCast3D" parent="Furniture/Rays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31, -0.095, -0.01)
+target_position = Vector3(0, 0, -0.2)
+
+[node name="Hint" type="MeshInstance3D" parent="Furniture"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+mesh = SubResource("PlaneMesh_Hint")
