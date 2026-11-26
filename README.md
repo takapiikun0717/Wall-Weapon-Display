@@ -54,7 +54,7 @@ Put your favorite images in frames and decorate your shelter!
 
 Place the WallGear.vmz file in the ‘mods’ folder and launch the game
 
-**[Requirements]{.tc color="#f9fafb"}**
+**Requirements**
 
 - Metro Mod Loader  ver3.4.2 or later
 
