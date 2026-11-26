@@ -1,4 +1,4 @@
-**[Main features]{.tc color="#f9fafb"}**
+**Main features**
 
 There’s only one type of Vanilla weapon display, and as it’s the kind you place on the floor, I found it a bit awkward to use, so I created this mod.
 
