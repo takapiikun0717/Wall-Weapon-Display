@@ -50,7 +50,7 @@ Put your favorite images in frames and decorate your shelter!
 
 ![](https://files.vostokmods.net/mod/01a1babe-5398-745d-a6f0-046c50d62c6c/screenshots/1794909738816-%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-11-17%20185700.png)
 
-**[Installation instructions]{.tc color="#f9fafb"}**
+**Installation instructions**
 
 Place the WallGear.vmz file in the ‘mods’ folder and launch the game
 
